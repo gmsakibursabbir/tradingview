@@ -1,0 +1,749 @@
+/* Universal reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: "Roboto", serif;
+  color: #333;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  border: none;
+}
+
+:focus {
+  outline: 2px dashed transparent;
+}
+
+/* global start */
+.btn-blue {
+  background: #136de8;
+  font-size: 16px;
+  padding: 14px 45px;
+  border-radius: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  color: white;
+  border: 2px solid #136de8;
+  text-transform: capitalize;
+}
+.btn-blue:hover {
+  background: transparent;
+  color: #136de8;
+}
+.btn-grad {
+  position: relative;
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 14px 45px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: 0.5s;
+  color: white;
+  border-radius: 8px; /* Rounded corners */
+  background: linear-gradient(
+    to right,
+    #12d8fa,
+    #1fa2ff
+  ); /* Default gradient background */
+  display: inline-block;
+  cursor: pointer;
+  z-index: 1;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.btn-grad::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px; /* Rounded corners for the gradient border */
+  padding: 2px; /* Border thickness */
+  background: linear-gradient(to right, #12d8fa, #1fa2ff); /* Gradient */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); /* Masking to create space for inner content */
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  z-index: -1;
+}
+
+.btn-grad:hover {
+  color: #1fa2ff;
+  background: transparent; /* Make the background transparent on hover */
+}
+
+.txt-grad {
+  background: -webkit-linear-gradient(#12aeff, #2e86fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+h1 {
+  font-size: clamp(30px, 3vw + 1rem, 64px);
+}
+h2 {
+  font-size: clamp(26px, 2vw + 16px, 38px);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+}
+h3 {
+  font-size: clamp(20px, 2vw + 16px, 24px);
+}
+
+.txt-blue {
+  color: #5cb3e5;
+}
+.txt-gray {
+  color: #bebebe;
+}
+/* global end */
+/* hero start */
+.bg-hero {
+  padding: 150px 0 300px 0;
+  background-image: url("../img/trading-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.hero-heading {
+  max-width: 900px;
+  margin: 0 auto;
+  font-weight: 400;
+  text-align: center;
+  color: #fff;
+}
+/* hero end */
+/* account start */
+#account {
+  background: #f0f3f5;
+}
+.account-content h2 {
+  font-weight: 500;
+}
+.brand-images {
+  margin-top: -80px;
+}
+.account-content {
+  margin-top: -200px;
+  padding: 50px;
+  border-radius: 20px;
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+.account-content::before {
+  content: "";
+  background-image: url(../img/border.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -40px;
+  left: 0;
+  z-index: -1;
+}
+.account-box {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.button-wrapper {
+  margin-top: 24px;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* account end */
+/* wordwide start */
+#wordwide {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background: #f0f3f5;
+}
+.cards {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 48px;
+}
+
+.card-box {
+  padding: 10px 30px 10px 30px;
+}
+.bry-gray {
+  border-right: 1px solid #d9d9d9;
+}
+.ww-icon {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+.cards h3 {
+  padding-top: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  text-align: center;
+}
+/* wordwide end */
+/* features start */
+#features {
+  padding: 80px 0;
+}
+.feature-card {
+  background-color: #f0f3f5;
+  padding: 30px;
+  border-radius: 16px;
+}
+.feature-content {
+  margin-bottom: 40px;
+}
+.feature-icon {
+  background-color: #d3dbdf;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.feature-icon img {
+  max-width: 24px;
+}
+.feature-card h3 {
+  font-weight: 700;
+}
+.mb-cmt {
+  margin-top: 26px;
+}
+/* features end */
+/* charter start */
+#charting {
+  padding: 60px 0;
+}
+.charting-box {
+  padding: 50px 0px 50px 50px;
+  background-color: #f0f3f5;
+  border-radius: 20px;
+}
+.charting-content p {
+  max-width: 500px;
+  padding: 20px 0 16px 0;
+}
+.charting-img {
+  display: flex;
+  justify-content: end;
+}
+.charting-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 0;
+}
+.charting-list img {
+  max-width: 30px;
+}
+.charting-list li {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+/* charter end */
+/* access start */
+#access {
+  padding: 80px 0;
+}
+.accessCards {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 48px;
+}
+#access h2 {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.acs-icon {
+  margin: 0 auto;
+  font-size: 26px;
+  font-weight: 500;
+  color: #fff;
+  width: 47px;
+  height: 47px;
+  border-radius: 50%;
+  background-color: #2e86fe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 0 0 1px #fff; /* Creates a border-like effect */
+}
+.acs-icon::before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* Ensures a perfect circle */
+  background-color: #2e86fe;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the circle */
+  z-index: -1; /* Ensures it's behind the .acs-icon element */
+}
+.accessCards h3 {
+  padding-top: 34px;
+}
+.acs-arrow-icons {
+  max-width: 22px;
+}
+.accessCards a {
+  font-weight: 500;
+  gap: 6px;
+}
+.accessCards a:hover {
+  color: #2e86fe;
+  text-decoration: underline;
+}
+.acs-card-box {
+  padding: 10px 30px 10px 30px;
+}
+/* access end */
+/* contact start */
+#contact {
+  padding: 80px 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../img/reg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.contact-content h2 {
+  font-weight: 600;
+}
+.contact-content {
+  color: #fff;
+  text-align: center;
+}
+.contact-content a {
+  margin-top: 16px;
+}
+/* contact end */
+/* faq start */
+#faq {
+  padding: 80px 0;
+}
+.faq-box {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.faq-heading {
+  margin-bottom: 40px;
+}
+.accordion-item {
+  border: none;
+}
+.accordion-button {
+  background-color: #f0f3f5;
+  padding: 20px 24px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.accordion-body {
+  background-color: #f0f3f5;
+  padding: 0px 24px 20px 24px;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed) {
+  background-color: #f0f3f5;
+  box-shadow: none;
+}
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
+}
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E");
+}
+/* faq end */
+/* app start */
+#app {
+  padding: 60px 0;
+  background: rgb(21, 215, 249);
+  background: linear-gradient(
+    265deg,
+    rgba(21, 215, 249, 1) 0%,
+    rgba(31, 162, 255, 1) 100%
+  );
+}
+.app-content {
+  color: #fff;
+  text-align: start;
+}
+/* app end */
+/* footer start */
+footer {
+  background: #1d2021;
+  padding: 60px 0;
+}
+.ft-policy {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  padding-bottom: 6px;
+}
+.ft-policy-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+.icon-path {
+  fill: white;
+}
+.social-icon:hover .icon-path {
+  fill: #12aeff;
+}
+.ft-contact {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.disclaimer {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 0;
+}
+.disclaimer-start {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 8px;
+}
+.social {
+  padding-top: 16px;
+}
+.social p {
+  padding-top: 16px;
+  margin-bottom: 8px;
+}
+.social-box {
+  gap: 10px;
+}
+/* footer end */
+
+/* <== media quary ==> */
+/* Extra Small (smaller than 576px) */
+@media (max-width: 575.98px) {
+  h3 {
+    font-size: 18px;
+  }
+  .btn-blue {
+    padding: 12px 20px;
+  }
+  .navbar-brand img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  /* hero start */
+  .bg-hero {
+    padding: 80px 0 200px 0;
+  }
+  /* hero end */
+  /* account start */
+  .account-content {
+    margin-top: -100px;
+    padding: 30px;
+  }
+  .brand-images img {
+    width: 100px;
+  }
+  .account-content::before {
+    bottom: -100px;
+  }
+  /* account end */
+  /* wordwide start */
+  .bry-gray {
+    border-right: 0px solid #d9d9d9;
+  }
+  #wordwide {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .card-box {
+    padding: 8px 20px 8px 20px;
+  }
+  /* wordwide end */
+  /* features start */
+  #features {
+    padding: 40px 0;
+  }
+  .feature-content {
+    margin-bottom: 0;
+  }
+  .mb-cmt {
+    margin-top: 18px;
+  }
+  .feature-card {
+    padding: 20px;
+  }
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+  }
+  /* features end */
+  /* charter start */
+  #charting {
+    padding: 30px 0;
+    background: #f0f3f5;
+  }
+  .charting-box {
+    padding: 0px !important;
+  }
+  .charting-content h2 {
+    text-align: center;
+  }
+  .charting-content p {
+    max-width: 500px;
+    padding: 10px 0 4px 0;
+  }
+  .charting-list {
+    gap: 12px;
+  }
+  /* charter end */
+  /* access start */
+  #access {
+    padding: 40px 0;
+  }
+  .acs-card-box {
+    padding: 0px;
+  }
+  .acs-icon {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .acs-icon::before {
+    width: 60px;
+    height: 60px;
+  }
+  /* access end */
+  /* faq start */
+  #faq {
+    padding: 40px 0;
+  }
+  .accordion-button {
+    font-size: 16px;
+  }
+  .accordion-body {
+    font-size: 14px;
+  }
+  /* faq end */
+  /* app start */
+  #app {
+    padding: 30px 0;
+  }
+  .app-list {
+    margin-top: 10px;
+  }
+  /* app end */
+  /* footer start */
+  footer {
+    padding: 40px 0;
+  }
+  /* footer end */
+}
+
+/* Small screens (≥576px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  h3 {
+    font-size: 18px;
+  }
+  .navbar-brand img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  /* account start */
+  .account-content {
+    margin-top: -100px;
+    padding: 30px;
+  }
+  .account-content::before {
+    bottom: -0px;
+  }
+  /* account end */
+  /* wordwide start */
+  .bry-gray {
+    border-right: 0px solid #d9d9d9;
+  }
+  /* wordwide end */
+  /* features start */
+  #features {
+    padding: 40px 0;
+  }
+  .mb-cmt {
+    margin-top: 20px;
+  }
+  .feature-card {
+    padding: 20px;
+  }
+
+  /* features end */
+  /* charter start */
+  #charting {
+    padding: 30px 0;
+    background: #f0f3f5;
+  }
+  .charting-box {
+    padding: 0px !important;
+  }
+  .charting-content h2 {
+    text-align: center;
+  }
+  .charting-content p {
+    max-width: 500px;
+    padding: 10px 0 4px 0;
+  }
+  .charting-list {
+    gap: 12px;
+  }
+  /* charter end */
+  /* access start */
+  #access {
+    padding: 40px 0;
+  }
+  .acs-card-box {
+    padding: 8px 20px 8px 20px;
+  }
+  .acs-icon {
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .acs-icon::before {
+    width: 60px;
+    height: 60px;
+  }
+  /* access end */
+  /* faq start */
+  #faq {
+    padding: 40px 0;
+  }
+  .accordion-button {
+    font-size: 16px;
+  }
+  .accordion-body {
+    font-size: 14px;
+  }
+  /* faq end */
+  /* app start */
+  #app {
+    padding: 30px 0;
+  }
+  .app-list {
+    margin-top: 10px;
+  }
+  /* app end */
+  /* footer start */
+  footer {
+    padding: 40px 0;
+  }
+  /* footer end */
+}
+/* Medium screens (≥768px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  /* account start */
+  .account-content {
+    padding: 40px;
+  }
+  /* account end */
+  /* wordwide start */
+  .card-box {
+    padding: 10px 20px 10px 20px;
+  }
+  /* wordwide end */
+  /* features start */
+  .feature-card {
+    padding: 20px;
+  }
+  /* charter start */
+  #charting {
+    padding: 30px 0;
+    background: #f0f3f5;
+  }
+  .charting-box {
+    padding: 0px !important;
+  }
+  .charting-content h2 {
+    text-align: center;
+  }
+  /* charter end */
+  /* access start */
+  .acs-card-box {
+    padding: 10px 20px 10px 20px;
+  }
+  /* access end */
+  /* faq start */
+  #faq {
+    padding: 40px 0;
+  }
+  /* faq end */
+  /* app start */
+  #app {
+    padding: 30px 0;
+  }
+  .app-list {
+    margin-top: 10px;
+  }
+  /* app end */
+}
